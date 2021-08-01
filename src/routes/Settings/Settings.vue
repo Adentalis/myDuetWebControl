@@ -31,15 +31,13 @@
 <template>
   <div id="settingsgrid">
     <router-link class="bigRouter" to="/Settings/General">General</router-link>
-    <router-link class="bigRouter" to="/Settings/Preferences"
-      >Preferences</router-link
-    >
-    <router-link class="bigRouter" to="/Settings/Configuration"
-      >Configuration</router-link
-    >
+    <router-link class="bigRouter" to="/Settings/Machine">Machine</router-link>
+    <router-link class="bigRouter" to="/">x</router-link>
     <router-link class="bigRouter" to="/Settings/System">System</router-link>
 
-    <router-link class="bigRouter" to="/Settings/Plugins">PlugIns</router-link>
+    <router-link class="bigRouter" to="/Settings/Plugins"
+      >PlugIns - start auto</router-link
+    >
 
     <router-link class="bigRouter" to="/Settings/About">About</router-link>
   </div>

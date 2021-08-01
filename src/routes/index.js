@@ -10,8 +10,6 @@ import Jobs from "./Files/Jobs.vue";
 
 import Status from "./Job/Status.vue";
 
-import Machine from "./Settings/Machine.vue";
-
 import Page404 from "./Page404.vue";
 
 //my new routes
@@ -29,6 +27,7 @@ import General from "./Settings/General.vue";
 import About from "./Settings/About.vue";
 import Control from "./Control/Control.vue";
 import System from "./Settings/System.vue";
+import Machine from "./Settings/Machine.vue";
 
 export const Menu = Vue.observable({
   Control: {
@@ -196,20 +195,16 @@ export function registerSettingTab(
 
 // Control
 Vue.use(Dashboard);
-Vue.use(Console);
 
 // Files
 Vue.use(Filaments);
 Vue.use(Jobs);
-Vue.use(Macros);
 Vue.use(System);
 
 // Job
 Vue.use(Status);
 
 // Settings
-Vue.use(General);
-Vue.use(Machine);
 
 //my new routes
 //print
@@ -217,9 +212,13 @@ Vue.use(Machine);
 //Control
 Vue.use(Tools);
 Vue.use(Effector);
+Vue.use(Macros);
+Vue.use(Console);
 
 //Settings
 Vue.use(Settings);
+Vue.use(General);
+Vue.use(Machine);
 Vue.use(About);
 Vue.use(Control);
 
