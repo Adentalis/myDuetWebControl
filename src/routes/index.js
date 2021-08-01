@@ -4,7 +4,6 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import Dashboard from "./Control/Dashboard.vue";
-import Console from "./Control/Console.vue";
 
 import Display from "./Files/Display.vue";
 import Filaments from "./Files/Filaments.vue";
@@ -26,6 +25,7 @@ import Page404 from "./Page404.vue";
 import Tools from "./Control/Tools.vue";
 import Effector from "./Control/Effector.vue";
 import Macros from "./Control/Macros.vue";
+import Console from "./Control/Console.vue";
 
 //Settings
 import Settings from "./Settings/Settings.vue";

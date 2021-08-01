@@ -44,7 +44,7 @@
 
     <router-link class="bigRouter" to="/Control/Macros">Macros</router-link>
 
-    <router-link class="bigRouter" to="/Console">Console</router-link>
+    <router-link class="bigRouter" to="/Control/Console">Console</router-link>
   </div>
 </template>
 
