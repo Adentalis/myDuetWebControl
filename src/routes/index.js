@@ -22,6 +22,7 @@ import Page404 from "./Page404.vue";
 
 //my new routes
 import Settings from "./Settings/Settings.vue";
+import About from "./Settings/About.vue";
 
 export const Menu = Vue.observable({
   Control: {
@@ -208,6 +209,7 @@ Vue.use(Machine);
 
 //my new routes
 Vue.use(Settings);
+Vue.use(About);
 
 // 404 page
 router.addRoutes([
