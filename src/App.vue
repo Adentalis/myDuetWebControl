@@ -52,48 +52,36 @@ textarea {
 .v-card__title {
   font-size: 1rem;
 }
+
+.navRouter {
+  border: 3px solid red;
+  width: 200px;
+}
+
+#t {
+  position: absolute;
+}
 </style>
 
 <template>
   <v-app>
-    <v-navigation-drawer v-model="drawer" clipped fixed app width="300">
-      <div class="pa-2 hidden-sm-and-up">
-        <connect-btn v-if="isLocal" class="mb-3" block></connect-btn>
-        <emergency-btn block></emergency-btn>
-      </div>
-
-      <v-list class="pt-0" :expand="$vuetify.breakpoint.mdAndUp">
-        <v-list-group
-          v-for="(category, index) in categories"
-          :key="index"
-          :prepend-icon="category.icon"
-          no-action
-          :value="isExpanded(category)"
-        >
-          <template #activator>
-            <v-list-item-title class="mr-0">{{
-              category.translated ? category.caption : $t(category.caption)
-            }}</v-list-item-title>
-          </template>
-
-          <v-list-item
-            v-for="(page, pageIndex) in getPages(category)"
-            :key="`${index}-${pageIndex}`"
-            v-ripple
-            :to="page.path"
-            @click.prevent=""
-          >
-            <v-list-item-icon>
-              <v-icon>{{ page.icon }}</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>{{
-              page.translated ? page.caption : $t(page.caption)
-            }}</v-list-item-title>
-          </v-list-item>
-        </v-list-group>
-      </v-list>
+    <!--Start of left navbar-->
+    <v-navigation-drawer
+      id="t"
+      v-model="drawer"
+      permanent
+      clipped
+      fixed
+      app
+      width="15%"
+    >
+      <router-link class="navRouter" to="/Settings/General">a</router-link>
+      <router-link class="navRouter" to="/Settings/General">b</router-link>
+      <router-link class="navRouter" to="/Settings/General">c</router-link>
     </v-navigation-drawer>
+    <!--End of left navbar-->
 
+    <!--Start of top statusbar-->
     <v-app-bar ref="appToolbar" app clipped-left>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer">
         <v-icon>mdi-menu</v-icon>
@@ -126,9 +114,11 @@ textarea {
         <v-icon>mdi-aspect-ratio</v-icon>
       </v-btn>
     </v-app-bar>
+    <!--End of top statusbar-->
 
     <v-main id="content">
       <v-scroll-y-transition>
+        <!--Start of the top view that is always to see-->
         <v-container
           v-show="!hideGlobalContainer || $vuetify.breakpoint.mdAndUp"
           id="global-container"
