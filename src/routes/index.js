@@ -6,7 +6,6 @@ import VueRouter from "vue-router";
 import Dashboard from "./Control/Dashboard.vue";
 
 import Filaments from "./Files/Filaments.vue";
-import Jobs from "./Files/Jobs.vue";
 
 import Status from "./Job/Status.vue";
 
@@ -14,6 +13,7 @@ import Page404 from "./Page404.vue";
 
 //my new routes
 //Jobs
+import Jobs from "./Job/Jobs.vue";
 
 //Control
 import Tools from "./Control/Tools.vue";
@@ -200,8 +200,6 @@ Vue.use(Dashboard);
 
 // Files
 Vue.use(Filaments);
-Vue.use(Jobs);
-Vue.use(System);
 
 // Job
 Vue.use(Status);
@@ -210,8 +208,10 @@ Vue.use(Status);
 
 //my new routes
 //print
+Vue.use(Jobs);
 
 //Control
+Vue.use(Control);
 Vue.use(Tools);
 Vue.use(Effector);
 Vue.use(Macros);
@@ -222,9 +222,9 @@ Vue.use(Fans);
 Vue.use(Settings);
 Vue.use(General);
 Vue.use(Machine);
-Vue.use(About);
-Vue.use(Control);
+Vue.use(System);
 Vue.use(Plugins);
+Vue.use(About);
 
 // 404 page
 router.addRoutes([

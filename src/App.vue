@@ -75,7 +75,7 @@ textarea {
       app
       width="15%"
     >
-      <router-link class="navRouter" to="/Settings/General">Print</router-link>
+      <router-link class="navRouter" to="/Job">Print</router-link>
       <router-link class="navRouter" to="/Control">Control</router-link>
       <router-link class="navRouter" to="/Settings">Settings</router-link>
     </v-navigation-drawer>
