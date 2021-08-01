@@ -20,6 +20,7 @@ import Tools from "./Control/Tools.vue";
 import Effector from "./Control/Effector.vue";
 import Macros from "./Control/Macros.vue";
 import Console from "./Control/Console.vue";
+import Fans from "./Control/Fans.vue";
 
 //Settings
 import Settings from "./Settings/Settings.vue";
@@ -215,6 +216,7 @@ Vue.use(Tools);
 Vue.use(Effector);
 Vue.use(Macros);
 Vue.use(Console);
+Vue.use(Fans);
 
 //Settings
 Vue.use(Settings);
