@@ -102,6 +102,7 @@ textarea {
         <a href="javascript:void(0)" id="title">{{ name }}</a>
       </v-toolbar-title>
       <connect-btn v-if="isLocal" class="hidden-xs-only"></connect-btn>
+      <div>TIME: {{ this.model.state.time }}</div>
 
       <v-spacer></v-spacer>
 
@@ -190,6 +191,7 @@ import { isPrinting } from "./store/machine/modelEnums.js";
 
 export default {
   computed: {
+    ...mapState("machine", ["model"]),
     ...mapState({
       isLocal: (state) => state.isLocal,
       globalShowConnectDialog: (state) => state.showConnectDialog,
