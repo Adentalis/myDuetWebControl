@@ -5,7 +5,6 @@ import VueRouter from "vue-router";
 
 import Dashboard from "./Control/Dashboard.vue";
 
-import Display from "./Files/Display.vue";
 import Filaments from "./Files/Filaments.vue";
 import Jobs from "./Files/Jobs.vue";
 
@@ -200,7 +199,6 @@ Vue.use(Dashboard);
 Vue.use(Console);
 
 // Files
-Vue.use(Display);
 Vue.use(Filaments);
 Vue.use(Jobs);
 Vue.use(Macros);
