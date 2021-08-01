@@ -116,39 +116,6 @@ textarea {
     <!--End of top statusbar-->
 
     <v-main id="content">
-      <v-scroll-y-transition>
-        <!--Start of the top view that is always to see-->
-        <v-container
-          v-show="!hideGlobalContainer || $vuetify.breakpoint.mdAndUp"
-          id="global-container"
-          fluid
-        >
-          <v-row>
-            <v-col cols="12" sm="6" md="4" lg="4" xl="4">
-              <status-panel></status-panel>
-            </v-col>
-
-            <v-col cols="12" sm="6" md="5" lg="5" xl="4">
-              <tools-panel></tools-panel>
-            </v-col>
-
-            <v-col
-              v-if="$vuetify.breakpoint.mdAndUp"
-              :class="{ 'd-flex': hasTemperaturesToDisplay }"
-              md="3"
-              lg="3"
-              xl="4"
-            >
-              <temperature-chart></temperature-chart>
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-scroll-y-transition>
-
-      <v-divider
-        v-show="!hideGlobalContainer || $vuetify.breakpoint.mdAndUp"
-      ></v-divider>
-
       <v-container fluid>
         <keep-alive>
           <router-view></router-view>
