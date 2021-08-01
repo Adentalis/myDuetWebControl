@@ -83,6 +83,7 @@ button {
 "use strict";
 
 import { mapState, mapActions } from "vuex";
+import { registerRoute } from "..";
 
 import Plugins from "../../plugins";
 import { registerSettingTab } from "../../routes";
@@ -98,6 +99,15 @@ export default {
         "tabs.plugins.caption"
       );
     }
+    registerRoute(this, {
+      Settings: {
+        Machine: {
+          icon: "mdi-cogs",
+          caption: "menu.settings.machine",
+          path: "/Settings/Plugins",
+        },
+      },
+    });
   },
 
   computed: {
