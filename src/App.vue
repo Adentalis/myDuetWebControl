@@ -83,36 +83,35 @@ textarea {
 
     <!--Start of top statusbar-->
     <v-app-bar ref="appToolbar" app clipped-left>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-app-bar-nav-icon>
+      <!-- Home Button-->
+      <router-link id="home" to="/">Home</router-link>
+      <v-spacer></v-spacer>
+
+      <!-- Back Button-->
+      <button id="goBackButton" @click="$router.back(-1)">
+        <v-icon id="goBackIcon">mdi-arrow-left</v-icon>
+      </button>
+      <v-spacer></v-spacer>
+
+      <!--Name of printer-->
       <v-toolbar-title>
         <a href="javascript:void(0)" id="title">{{ name }}</a>
       </v-toolbar-title>
+      <v-spacer></v-spacer>
+
+      <!--connect Button-->
       <connect-btn v-if="isLocal" class="hidden-xs-only"></connect-btn>
+      <v-spacer></v-spacer>
+
+      <!--show time-->
       <div>TIME: {{ this.model.state.time }}</div>
-
       <v-spacer></v-spacer>
 
-      <code-input class="mx-3 hidden-sm-and-down"></code-input>
+      <!-- Status-->
+      <status-label id="currentStatus" v-if="status"></status-label>
 
       <v-spacer></v-spacer>
-
-      <upload-btn
-        target="start"
-        :elevation="1"
-        class="mr-3 hidden-sm-and-down"
-      ></upload-btn>
       <emergency-btn class="hidden-xs-only"></emergency-btn>
-
-      <v-btn
-        icon
-        class="hidden-md-and-up ml-3"
-        :class="toggleGlobalContainerColor"
-        @click="hideGlobalContainer = !hideGlobalContainer"
-      >
-        <v-icon>mdi-aspect-ratio</v-icon>
-      </v-btn>
     </v-app-bar>
     <!--End of top statusbar-->
 
