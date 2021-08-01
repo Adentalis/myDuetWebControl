@@ -30,17 +30,19 @@
 
 <template>
   <div id="homegrid">
-    <router-link class="bigRouter" to="/Control/Tools">Extruder</router-link>
+    <router-link class="bigRouter" to="/Control/Tools">Tools</router-link>
     <router-link class="bigRouter" to="/Control/Effector">Effector</router-link>
     <router-link class="bigRouter" to="/Job/GCodeViewer"
       >PrintViewer</router-link
     >
 
-    <router-link class="bigRouter" to="/Files/Extrusion">Filament</router-link>
+    <router-link class="bigRouter" to="/Files/Extrusion"
+      >Filament - in Tools</router-link
+    >
     <router-link class="bigRouter" to="/Job/Status">BedLeveling</router-link>
     <router-link class="bigRouter" to="/HeightMap">Heightmap</router-link>
 
-    <router-link class="bigRouter" to="/Files/Macros">Macros</router-link>
+    <router-link class="bigRouter" to="/Control/Macros">Macros</router-link>
 
     <router-link class="bigRouter" to="/Console">Console</router-link>
   </div>

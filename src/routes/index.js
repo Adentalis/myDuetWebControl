@@ -9,7 +9,6 @@ import Console from "./Control/Console.vue";
 import Display from "./Files/Display.vue";
 import Filaments from "./Files/Filaments.vue";
 import Jobs from "./Files/Jobs.vue";
-import Macros from "./Files/Macros.vue";
 import System from "./Files/System.vue";
 
 import Status from "./Job/Status.vue";
@@ -26,6 +25,7 @@ import Page404 from "./Page404.vue";
 //Control
 import Tools from "./Control/Tools.vue";
 import Effector from "./Control/Effector.vue";
+import Macros from "./Control/Macros.vue";
 
 //Settings
 import Settings from "./Settings/Settings.vue";
