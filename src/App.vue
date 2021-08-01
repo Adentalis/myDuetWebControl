@@ -103,14 +103,14 @@ textarea {
       <connect-btn v-if="isLocal" class="hidden-xs-only"></connect-btn>
       <v-spacer></v-spacer>
 
+      <!-- Status-->
+      <status-label id="currentStatus" v-if="status"></status-label>
+      <v-spacer></v-spacer>
+
       <!--show time-->
       <div>TIME: {{ this.model.state.time }}</div>
       <v-spacer></v-spacer>
 
-      <!-- Status-->
-      <status-label id="currentStatus" v-if="status"></status-label>
-
-      <v-spacer></v-spacer>
       <emergency-btn class="hidden-xs-only"></emergency-btn>
     </v-app-bar>
     <!--End of top statusbar-->
