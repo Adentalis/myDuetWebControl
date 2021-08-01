@@ -10,7 +10,6 @@ import Filaments from "./Files/Filaments.vue";
 import Jobs from "./Files/Jobs.vue";
 
 import Status from "./Job/Status.vue";
-import Webcam from "./Job/Webcam.vue";
 
 import Machine from "./Settings/Machine.vue";
 
@@ -209,7 +208,6 @@ Vue.use(System);
 
 // Job
 Vue.use(Status);
-Vue.use(Webcam);
 
 // Settings
 Vue.use(General);
