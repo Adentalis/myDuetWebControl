@@ -39,7 +39,7 @@
     <router-link class="bigRouter" to="/Files/Extrusion"
       >Filament - in Tools</router-link
     >
-    <router-link class="bigRouter" to="/Job/Status">BedLeveling</router-link>
+    <router-link class="bigRouter" to="/">x</router-link>
     <router-link class="bigRouter" to="/HeightMap">Heightmap</router-link>
 
     <router-link class="bigRouter" to="/Control/Macros">Macros</router-link>
