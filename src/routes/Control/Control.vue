@@ -9,7 +9,7 @@
 
 .bigRouter {
   background-color: rgb(126, 123, 123);
-  color: rgb(68, 68, 241);
+  color: rgb(255, 255, 255);
   height: 34vh;
   text-decoration: none;
   text-transform: uppercase;
@@ -18,6 +18,8 @@
   padding-top: 23vh;
   background: cornflowerblue;
   border: 5px rgb(68, 68, 241) solid;
+  font-size: 4vh;
+  border-radius: 3vh;
 }
 
 .bigRouter:hover {
@@ -33,7 +35,7 @@
     <router-link class="bigRouter" to="/Control/Tools">Tools</router-link>
     <router-link class="bigRouter" to="/Control/Effector">Effector</router-link>
     <router-link class="bigRouter" to="/Job/GCodeViewer"
-      >PrintViewer</router-link
+      >PrintViewer - in print</router-link
     >
 
     <router-link class="bigRouter" to="/Files/Extrusion"

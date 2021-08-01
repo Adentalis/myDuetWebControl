@@ -3,14 +3,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: minmax(30vh, 30vh);
-  grid-gap: 5vh;
+  grid-gap: 10vh 5vh;
   margin: 5vh;
 }
 
 .bigRouter {
   background-color: rgb(126, 123, 123);
-  color: rgb(68, 68, 241);
-  height: 30vh;
+  color: rgb(255, 255, 255);
+  height: 34vh;
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
@@ -18,6 +18,8 @@
   padding-top: 23vh;
   background: cornflowerblue;
   border: 5px rgb(68, 68, 241) solid;
+  font-size: 4vh;
+  border-radius: 3vh;
 }
 
 .bigRouter:hover {
