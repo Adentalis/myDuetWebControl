@@ -30,8 +30,8 @@
 
 <template>
   <div id="homegrid">
-    <router-link class="bigRouter" to="/Files/Extruder">Extruder</router-link>
-    <router-link class="bigRouter" to="/Files/Effector">Effector</router-link>
+    <router-link class="bigRouter" to="/Control/Tools">Extruder</router-link>
+    <router-link class="bigRouter" to="/Control/Effector">Effector</router-link>
     <router-link class="bigRouter" to="/Job/GCodeViewer"
       >PrintViewer</router-link
     >
