@@ -24,6 +24,8 @@ import Page404 from "./Page404.vue";
 import Settings from "./Settings/Settings.vue";
 import About from "./Settings/About.vue";
 
+import Control from "./Control/Control.vue";
+
 export const Menu = Vue.observable({
   Control: {
     icon: "mdi-tune",
@@ -210,6 +212,7 @@ Vue.use(Machine);
 //my new routes
 Vue.use(Settings);
 Vue.use(About);
+Vue.use(Control);
 
 // 404 page
 router.addRoutes([
