@@ -83,11 +83,14 @@ textarea {
 
     <!--Start of top statusbar-->
     <v-app-bar ref="appToolbar" app clipped-left>
-      <!-- Home Button-->
+      <!--Logo-->
+      <img alt="Vue logo" src="./assets/ab.png" width="50vh" />
+
+      <!--Home Button-->
       <router-link id="home" to="/">Home</router-link>
       <v-spacer></v-spacer>
 
-      <!-- Back Button-->
+      <!--Back Button-->
       <button id="goBackButton" @click="$router.back(-1)">
         <v-icon id="goBackIcon">mdi-arrow-left</v-icon>
       </button>
