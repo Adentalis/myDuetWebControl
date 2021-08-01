@@ -25,6 +25,7 @@ import Page404 from "./Page404.vue";
 
 //Control
 import Tools from "./Control/Tools.vue";
+import Effector from "./Control/Effector.vue";
 
 //Settings
 import Settings from "./Settings/Settings.vue";
@@ -220,6 +221,7 @@ Vue.use(Machine);
 
 //Control
 Vue.use(Tools);
+Vue.use(Effector);
 
 //Settings
 Vue.use(Settings);
