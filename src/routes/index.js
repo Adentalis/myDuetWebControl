@@ -21,6 +21,12 @@ import Machine from "./Settings/Machine.vue";
 import Page404 from "./Page404.vue";
 
 //my new routes
+//Jobs
+
+//Control
+import Tools from "./Control/Tools.vue";
+
+//Settings
 import Settings from "./Settings/Settings.vue";
 import About from "./Settings/About.vue";
 
@@ -210,6 +216,12 @@ Vue.use(General);
 Vue.use(Machine);
 
 //my new routes
+//print
+
+//Control
+Vue.use(Tools);
+
+//Settings
 Vue.use(Settings);
 Vue.use(About);
 Vue.use(Control);
