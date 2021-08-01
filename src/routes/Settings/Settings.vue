@@ -37,7 +37,7 @@
     <router-link class="bigRouter" to="/Settings/Configuration"
       >Configuration</router-link
     >
-    <router-link class="bigRouter" to="/Files/Macros">x</router-link>
+    <router-link class="bigRouter" to="/Settings/System">System</router-link>
 
     <router-link class="bigRouter" to="/Settings/Plugins">PlugIns</router-link>
 

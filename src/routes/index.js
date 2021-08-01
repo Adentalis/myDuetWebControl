@@ -8,7 +8,6 @@ import Dashboard from "./Control/Dashboard.vue";
 import Display from "./Files/Display.vue";
 import Filaments from "./Files/Filaments.vue";
 import Jobs from "./Files/Jobs.vue";
-import System from "./Files/System.vue";
 
 import Status from "./Job/Status.vue";
 import Webcam from "./Job/Webcam.vue";
@@ -31,6 +30,7 @@ import Settings from "./Settings/Settings.vue";
 import General from "./Settings/General.vue";
 import About from "./Settings/About.vue";
 import Control from "./Control/Control.vue";
+import System from "./Settings/System.vue";
 
 export const Menu = Vue.observable({
   Control: {
