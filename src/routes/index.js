@@ -13,7 +13,6 @@ import System from "./Files/System.vue";
 import Status from "./Job/Status.vue";
 import Webcam from "./Job/Webcam.vue";
 
-import General from "./Settings/General.vue";
 import Machine from "./Settings/Machine.vue";
 
 import Page404 from "./Page404.vue";
@@ -29,8 +28,8 @@ import Console from "./Control/Console.vue";
 
 //Settings
 import Settings from "./Settings/Settings.vue";
+import General from "./Settings/General.vue";
 import About from "./Settings/About.vue";
-
 import Control from "./Control/Control.vue";
 
 export const Menu = Vue.observable({

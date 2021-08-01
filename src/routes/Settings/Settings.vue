@@ -30,9 +30,7 @@
 
 <template>
   <div id="settingsgrid">
-    <router-link class="bigRouter" to="/Settings/GeneralSettings"
-      >General</router-link
-    >
+    <router-link class="bigRouter" to="/Settings/General">General</router-link>
     <router-link class="bigRouter" to="/Settings/Preferences"
       >Preferences</router-link
     >

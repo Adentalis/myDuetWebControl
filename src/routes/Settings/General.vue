@@ -1,37 +1,28 @@
 <template>
-	<v-tabs class="elevation-2 mt-3">
-		<v-tabs-slider></v-tabs-slider>
-
-		<v-tab v-for="(tab, index) in tabs" :key="index" :href="`#general-tab-${index}`">
-			<v-icon v-if="tab.icon" class="mr-1">{{ tab.icon }}</v-icon> {{ tab.translated ? tab.caption : $t(tab.caption) }}
-		</v-tab>
-
-		<v-tab-item v-for="(tab, index) in tabs" :key="index" :value="`general-tab-${index}`">
-			<component :is="tab.component"></component>
-		</v-tab-item>
-	</v-tabs>
+  <div>
+    <settings-apperance-panel></settings-apperance-panel>
+    <settings-notifications-panel></settings-notifications-panel>
+  </div>
 </template>
 
-<script>
-'use strict'
 
-import { registerRoute, GeneralSettingTabs } from '..'
+<script>
+"use strict";
+
+import { registerRoute } from "..";
 
 export default {
-	install() {
-		// Register a route via Settings -> General
-		registerRoute(this, {
-			Settings: {
-				General: {
-					icon: 'mdi-tune',
-					caption: 'menu.settings.general',
-					path: '/Settings/General'
-				}
-			}
-		});
-	},
-	computed: {
-		tabs: () => GeneralSettingTabs
-	}
-}
+  install() {
+    // Register a route via Files -> Jobs
+    registerRoute(this, {
+      Files: {
+        Jobs: {
+          icon: "mdi-play",
+          caption: "Tools",
+          path: "/Settings/General",
+        },
+      },
+    });
+  },
+};
 </script>
