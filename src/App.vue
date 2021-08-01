@@ -54,7 +54,7 @@ textarea {
 }
 
 .navRouter {
-  border: 3px solid red;
+  border: 2px solid red;
   width: 200px;
 }
 
@@ -75,9 +75,11 @@ textarea {
       app
       width="15%"
     >
-      <router-link class="navRouter" to="/Settings/General">a</router-link>
-      <router-link class="navRouter" to="/Settings/General">b</router-link>
-      <router-link class="navRouter" to="/Settings/General">c</router-link>
+      <router-link class="navRouter" to="/Settings/General">Print</router-link>
+      <router-link class="navRouter" to="/Settings/General"
+        >Control</router-link
+      >
+      <router-link class="navRouter" to="/Settings">Settings</router-link>
     </v-navigation-drawer>
     <!--End of left navbar-->
 
