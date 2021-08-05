@@ -15,11 +15,17 @@
   text-transform: uppercase;
   display: inline-block;
   text-align: center;
-  padding-top: 23vh;
   background: cornflowerblue;
   border: 5px rgb(68, 68, 241) solid;
   font-size: 4vh;
   border-radius: 3vh;
+}
+
+.bigRouter img {
+  max-width: 110px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
 }
 
 .bigRouter:hover {
@@ -32,7 +38,12 @@
 
 <template>
   <div id="homegrid">
-    <router-link class="bigRouter" to="/Control/Tools">Tools</router-link>
+    <router-link class="bigRouter" to="/Control/Tools">
+      <div>
+        <img src="/img/icons/print.png" />
+        <h3 style="text-align: center">Tools</h3>
+      </div>
+    </router-link>
     <router-link class="bigRouter" to="/Control/Effector">Effector</router-link>
     <router-link class="bigRouter" to="/Job/GCodeViewer"
       >PrintViewer - in print</router-link
