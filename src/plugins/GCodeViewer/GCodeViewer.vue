@@ -105,17 +105,16 @@
       >
         <v-btn
           class="full-screen-icon mb-2"
-          small
+          medium
           @click="toggleFullScreen"
           :title="$t('plugins.gcodeViewer.fullscreen')"
         >
-          <v-icon>{{
-            fullscreen ? "mdi-window-restore" : "mdi-window-maximize"
-          }}</v-icon>
+          <v-icon>mdi-arrow-left</v-icon>
         </v-btn>
+
         <br />
         <v-btn
-          small
+          medium
           class="toggle-menu-button-close mb-10"
           @click="drawer = !drawer"
           :title="$t('plugins.gcodeViewer.showConfiguration')"
@@ -567,7 +566,7 @@ export default {
     showAxes: true,
     showObjectLabels: true,
     liveTrackingShowSolid: false,
-    fullscreen: false,
+    fullscreen: true,
     bedColor: "",
     colorMode: 0,
     minColorRate: 20,
@@ -715,15 +714,10 @@ export default {
         this.resize();
       });
     });
-    setTimeout(() => {
-      this.fullscreen = !this.fullscreen;
-      this.$nextTick(() => {
-        viewer.resize();
-      });
-    }, 500);
   },
   beforeDestroy() {
     this.$root.$off("view-3d-model", this.viewModelEvent);
+    this.fullscreen = false;
   },
   methods: {
     ...mapActions("machine", {
@@ -881,10 +875,7 @@ export default {
       e.target.value = "";
     },
     toggleFullScreen() {
-      this.fullscreen = !this.fullscreen;
-      this.$nextTick(() => {
-        viewer.resize();
-      });
+      this.$router.push({ path: "/Job" });
     },
     displayMaxFileFeedRate() {
       if (this.maxFileFeedRate > 0) return `(${this.maxFileFeedRate / 60})`;
