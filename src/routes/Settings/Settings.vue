@@ -1,29 +1,39 @@
 <style scoped>
 #settingsgrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: minmax(30vh, 30vh);
   grid-gap: 10vh 5vh;
   margin: 5vh;
 }
 
 .bigRouter {
-  background-color: rgb(126, 123, 123);
   color: rgb(255, 255, 255);
-  height: 34vh;
+  height: 120%;
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
   text-align: center;
-  padding-top: 23vh;
-  background: cornflowerblue;
-  border: 5px rgb(68, 68, 241) solid;
+  background: rgb(167, 88, 219);
+  border: 5px rgb(76, 23, 119) solid;
   font-size: 4vh;
   border-radius: 3vh;
 }
 
+.bigRouter img {
+  max-width: 18%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  padding-top: 3%;
+}
+
+.bigRouter h3 {
+  padding-top: 5%;
+}
+
 .bigRouter:hover {
-  background-color: #2e71ec;
+  background-color: #853be6;
   color: white;
   cursor: pointer;
 }
@@ -32,16 +42,33 @@
 
 <template>
   <div id="settingsgrid">
-    <router-link class="bigRouter" to="/Settings/General">General</router-link>
-    <router-link class="bigRouter" to="/Settings/Machine">Machine</router-link>
-    <router-link class="bigRouter" to="/">x</router-link>
-    <router-link class="bigRouter" to="/Settings/System">System</router-link>
+    <router-link class="bigRouter" to="/Settings/General">
+      <div>
+        <img src="/img/icons/preferences.png" />
+        <h3 style="text-align: center">General</h3>
+      </div>
+    </router-link>
 
-    <router-link class="bigRouter" to="/Settings/Plugins"
-      >PlugIns - start auto</router-link
-    >
+    <router-link class="bigRouter" to="/Settings/Machine">
+      <div>
+        <img src="/img/icons/machine.png" />
+        <h3 style="text-align: center">Machine</h3>
+      </div>
+    </router-link>
 
-    <router-link class="bigRouter" to="/Settings/About">About</router-link>
+    <router-link class="bigRouter" to="/Settings/System">
+      <div>
+        <img src="/img/icons/folder.png" />
+        <h3 style="text-align: center">System</h3>
+      </div>
+    </router-link>
+
+    <router-link class="bigRouter" to="/Settings/About">
+      <div>
+        <img src="/img/icons/info.png" />
+        <h3 style="text-align: center">About</h3>
+      </div>
+    </router-link>
   </div>
 </template>
 
