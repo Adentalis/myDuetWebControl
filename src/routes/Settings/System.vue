@@ -4,20 +4,16 @@
       <system-file-list></system-file-list>
     </v-col>
 
-    <v-col>
+    <v-col v-else>
       <v-row justify="center">
-        <v-btn color="primary" dark @click.stop="dialog = true">
-          Click to authorize
-        </v-btn>
-
-        <v-dialog v-model="dialog" max-width="290">
+        <v-dialog v-model="unauthenticated" persistent max-width="300">
           <v-card>
-            <v-card-title class="text-h5"> System settings </v-card-title>
+            <v-card-title class="text-h5"> System Settings </v-card-title>
 
             <v-card-text>
-              Enter Password to continue
+              Enter Admin Password to continue
               <v-text-field
-                label="Authorization Code"
+                label="Admin Password"
                 v-model="code"
                 required
               ></v-text-field>
@@ -25,14 +21,11 @@
             </v-card-text>
 
             <v-card-actions>
+              <button id="goBackButton" @click="$router.back(-1)">Close</button>
               <v-spacer></v-spacer>
 
               <v-btn color="green darken-1" text @click="submit">
                 Submit
-              </v-btn>
-
-              <v-btn color="green darken-1" text @click="dialog = false">
-                Cancel
               </v-btn>
             </v-card-actions>
           </v-card>
@@ -51,6 +44,7 @@ export default {
   data() {
     return {
       authenticated: false,
+      unauthenticated: true,
       code: "",
       message: "",
       dialog: true,
@@ -66,14 +60,18 @@ export default {
       }
     },
   },
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      vm.unauthenticated = true;
+    });
+  },
   beforeRouteLeave(to, from, next) {
     this.authenticated = false;
+    this.unauthenticated = false;
     this.code = "";
     next();
   },
-  mounted() {
-    this.dialog = true;
-  },
+  mounted() {},
   install() {
     // Register a route via Files -> System
     registerRoute(this, {
