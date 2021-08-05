@@ -61,6 +61,13 @@ textarea {
 #t {
   position: absolute;
 }
+.nav-item {
+  height: 13.2% !important;
+  width: 90px !important;
+  margin: 0px auto !important;
+  padding: 5px 2px;
+  cursor: pointer;
+}
 </style>
 
 <template>
@@ -73,27 +80,51 @@ textarea {
       clipped
       fixed
       app
-      width="15%"
+      width="150"
     >
-      <router-link class="navRouter" to="/Job">Print</router-link>
+      <!-- <v-list
+        dense
+        nav
+      >
+    <div
+          style='height:16%;'
+          v-for="item in items"
+          :key="item.title"
+          link
+          :to='item.path'
+        >
+         
+          <v-img :src="item.icon" style='max-height:15%;'></v-img>
+      </div>
+      </v-list>     -->
+      <div class="nav-item">
+        <v-img src="./assets/ab.png" @click="goTo('/')"></v-img>
+        <v-img src="/img/icons/print.png" @click="goTo('/Job')"></v-img>
+        <v-img src="/img/icons/control.png" @click="goTo('/Control')"></v-img>
+        <v-img src="/img/icons/settings.png" @click="goTo('/Settings')"></v-img>
+        <v-img src="/img/icons/back.png" @click="goBack()"></v-img>
+        <v-img src="/img/icons/stop.png" @click="stop()"></v-img>
+      </div>
+
+      <!-- <router-link class="navRouter" to="/Job">Print</router-link>
       <router-link class="navRouter" to="/Control">Control</router-link>
-      <router-link class="navRouter" to="/Settings">Settings</router-link>
+      <router-link class="navRouter" to="/Settings">Settings</router-link> -->
     </v-navigation-drawer>
     <!--End of left navbar-->
 
     <!--Start of top statusbar-->
     <v-app-bar ref="appToolbar" app clipped-left>
       <!--Logo-->
-      <img alt="Vue logo" src="./assets/ab.png" width="50vh" />
+      <!-- <img alt="Vue logo" src="./assets/ab.png" width="50vh" /> -->
 
       <!--Home Button-->
-      <router-link id="home" to="/">Home</router-link>
-      <v-spacer></v-spacer>
+      <!-- <router-link id="home" to="/">Home</router-link> -->
+      <!-- <v-spacer></v-spacer> -->
 
       <!--Back Button-->
-      <button id="goBackButton" @click="$router.back(-1)">
-        <v-icon id="goBackIcon">mdi-arrow-left</v-icon>
-      </button>
+      <!-- <button id="goBackButton" @click="$router.back(-1)"> -->
+      <!-- <v-icon id="goBackIcon">mdi-arrow-left</v-icon> -->
+      <!-- </button> -->
       <v-spacer></v-spacer>
 
       <!--Name of printer-->
@@ -105,7 +136,8 @@ textarea {
       <!--connect Button-->
       <connect-btn v-if="isLocal" class="hidden-xs-only"></connect-btn>
       <v-spacer></v-spacer>
-
+      <h3 style="color: black">{{ getRoute }}</h3>
+      <v-spacer></v-spacer>
       <!-- Status-->
       <status-label id="currentStatus" v-if="status"></status-label>
       <v-spacer></v-spacer>
@@ -141,7 +173,7 @@ textarea {
 
 <script>
 "use strict";
-
+import Plugins from "./plugins";
 import Piecon from "piecon";
 import { mapState, mapGetters, mapActions } from "vuex";
 
@@ -164,6 +196,10 @@ export default {
       webcam: (state) => state.settings.webcam,
 
       injectedComponents: (state) => state.uiInjection.injectedComponents,
+      getRoute() {
+        let d = this.$route.fullPath.split("/");
+        return d[d.length - 1];
+      },
     }),
     ...mapGetters("machine", ["hasTemperaturesToDisplay"]),
     ...mapGetters("machine/model", ["jobProgress"]),
@@ -201,15 +237,45 @@ export default {
   },
   data() {
     return {
+      rname: "",
       drawer: this.$vuetify.breakpoint.lgAndUp,
       hideGlobalContainer: false,
+      ht: 0,
       wasXs: this.$vuetify.breakpoint.xsOnly,
       injectedComponentNames: [],
     };
   },
   methods: {
+    ...mapActions(["loadDwcPlugin", "unloadDwcPlugin"]),
     ...mapActions(["connect", "disconnectAll"]),
     ...mapActions("settings", ["load"]),
+    goTo(path) {
+      this.$router.push({ path: path });
+    },
+
+    goBack() {
+      this.$router.go(-1);
+    },
+
+    stop() {},
+    async startPlugin(plugin) {
+      // this.busyPlugins.push(plugin.name);
+      // try {
+      // try {
+      // Load DWC resources
+      await this.loadDwcPlugin({ name: plugin.name, saveSettings: true });
+
+      // Display a message
+      // alert("Plugin has been started");
+      // } catch (e) {
+      // alert(e);
+      // throw e;
+      // }
+      // } finally {
+      // this.busyPlugins = this.busyPlugins.filter(
+      // (item) => item != plugin.name
+      // );
+    },
     getPages(category) {
       return category.pages.filter((page) => page.condition);
     },
@@ -232,6 +298,12 @@ export default {
     },
   },
   mounted() {
+    this.rname = this.$route.fullPath;
+    console.log(this.$route.fullPath);
+    Plugins.forEach((element) => {
+      this.startPlugin(element);
+    });
+    this.ht = window.innerHeight / 6;
     // Attempt to disconnect from every machine when the page is being unloaded
     window.addEventListener("unload", this.disconnectAll);
 
