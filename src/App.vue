@@ -68,6 +68,10 @@ textarea {
   padding: 5px 2px;
   cursor: pointer;
 }
+
+.v-navigation-drawer {
+  position: fixed !important;
+}
 </style>
 
 <template>
