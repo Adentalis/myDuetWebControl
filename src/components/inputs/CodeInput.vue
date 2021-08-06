@@ -2,6 +2,10 @@
 .grow {
   flex-grow: 1;
 }
+#gcode-reference {
+  background: #fb8c00 !important;
+  margin-right: 1vh;
+}
 </style>
 
 <template>
@@ -12,6 +16,7 @@
     align="center"
   >
     <v-btn
+      id="gcode-reference"
       dark
       text
       href="https://duet3d.dozuki.com/Wiki/Gcode"
