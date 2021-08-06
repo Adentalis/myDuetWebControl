@@ -73,6 +73,11 @@ textarea {
   text-align: center;
   margin-top: 3vh;
 }
+
+#title {
+  margin-left: 5vh;
+  font-size: 24px;
+}
 </style>
 
 <template>
@@ -115,38 +120,28 @@ textarea {
 
     <!--Start of top statusbar-->
     <v-app-bar ref="appToolbar" app clipped-left>
-      <!--Logo-->
-      <!-- <img alt="Vue logo" src="./assets/ab.png" width="50vh" /> -->
-
-      <!--Home Button-->
-      <!-- <router-link id="home" to="/">Home</router-link> -->
-      <!-- <v-spacer></v-spacer> -->
-
-      <!--Back Button-->
-      <!-- <button id="goBackButton" @click="$router.back(-1)"> -->
-      <!-- <v-icon id="goBackIcon">mdi-arrow-left</v-icon> -->
-      <!-- </button> -->
-      <v-spacer></v-spacer>
-
       <!--Name of printer-->
       <v-toolbar-title>
-        <a href="javascript:void(0)" id="title">{{ name }}</a>
+        <div id="title">{{ name }}</div>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
       <!--connect Button-->
       <connect-btn v-if="isLocal" class="hidden-xs-only"></connect-btn>
       <v-spacer></v-spacer>
-      <h3 style="color: black">{{ getRoute }}</h3>
-      <v-spacer></v-spacer>
       <!-- Status-->
       <status-label id="currentStatus" v-if="status"></status-label>
       <v-spacer></v-spacer>
 
-      <!--show time-->
-      <div>TIME: {{ this.model.state.time }}</div>
+      <!-- Time-->
+      <h2>{{ getRoute }}</h2>
       <v-spacer></v-spacer>
 
+      <!--show time-->
+      <h2>{{ getTime }}</h2>
+      <v-spacer></v-spacer>
+
+      <!--Stop Btn-->
       <emergency-btn class="hidden-xs-only"></emergency-btn>
     </v-app-bar>
     <!--End of top statusbar-->
@@ -197,9 +192,16 @@ export default {
       webcam: (state) => state.settings.webcam,
 
       injectedComponents: (state) => state.uiInjection.injectedComponents,
+      getTime() {
+        let time = this.model.state.time;
+        time = time.substring(0, time.length - 3);
+        time = time.substring(time.length - 5);
+        return time;
+      },
       getRoute() {
-        let d = this.$route.fullPath.split("/");
-        return d[d.length - 1];
+        let path = this.$route.fullPath.split("/");
+        if (path[1] !== "") return path[path.length - 1];
+        else return "Home";
       },
     }),
     ...mapGetters("machine", ["hasTemperaturesToDisplay"]),
