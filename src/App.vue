@@ -94,22 +94,22 @@ textarea {
       <div class="nav-item">
         <div class="nav-btn" @click="goTo('/')">
           <v-img src="/img/icons/home.png"></v-img>
-          Home
+          {{ $t("routes.home") }}
         </div>
 
         <div class="nav-btn" @click="goTo('/Job')">
           <v-img src="/img/icons/print.png"></v-img>
-          Print
+          {{ $t("routes.print") }}
         </div>
 
         <div class="nav-btn" @click="goTo('/Control')">
           <v-img src="/img/icons/hand.png"></v-img>
-          Control
+          {{ $t("routes.control") }}
         </div>
 
         <div class="nav-btn" @click="goTo('/Settings')">
           <v-img src="/img/icons/settings.png"></v-img>
-          Settings
+          {{ $t("routes.settings") }}
         </div>
         <div class="nav-btn" @click="goBack()">
           <v-img class="a" src="/img/icons/back.png"></v-img>

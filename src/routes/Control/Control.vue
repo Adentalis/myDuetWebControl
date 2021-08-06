@@ -46,42 +46,42 @@
     <router-link class="bigRouter" to="/Control/Tools">
       <div>
         <img src="/img/icons/tool.png" />
-        <h3 style="text-align: center">Tools</h3>
+        <h3 style="text-align: center">{{ $t("routes.tools") }}</h3>
       </div>
     </router-link>
 
     <router-link class="bigRouter" to="/Control/Effector">
       <div>
         <img src="/img/icons/movement.png" />
-        <h3 style="text-align: center">Effector</h3>
+        <h3 style="text-align: center">{{ $t("routes.effector") }}</h3>
       </div>
     </router-link>
 
     <router-link class="bigRouter" to="/Control/Fans">
       <div>
         <img src="/img/icons/fan.png" />
-        <h3 style="text-align: center">Fans</h3>
+        <h3 style="text-align: center">{{ $t("routes.fans") }}</h3>
       </div>
     </router-link>
 
     <router-link class="bigRouter" to="/HeightMap">
       <div>
         <img src="/img/icons/map.png" />
-        <h3 style="text-align: center">Heightmap</h3>
+        <h3 style="text-align: center">{{ $t("routes.heightmap") }}</h3>
       </div>
     </router-link>
 
     <router-link class="bigRouter" to="/Control/Macros">
       <div>
         <img src="/img/icons/macro.png" />
-        <h3 style="text-align: center">Macros</h3>
+        <h3 style="text-align: center">{{ $t("routes.macros") }}</h3>
       </div>
     </router-link>
 
     <router-link class="bigRouter" to="/Control/Console">
       <div>
         <img src="/img/icons/console.png" />
-        <h3 style="text-align: center">Console</h3>
+        <h3 style="text-align: center">{{ $t("routes.console") }}</h3>
       </div>
     </router-link>
   </div>

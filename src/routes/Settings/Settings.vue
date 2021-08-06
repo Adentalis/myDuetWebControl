@@ -45,28 +45,28 @@
     <router-link class="bigRouter" to="/Settings/General">
       <div>
         <img src="/img/icons/preferences.png" />
-        <h3 style="text-align: center">General</h3>
+        <h3 style="text-align: center">{{ $t("routes.generalSettings") }}</h3>
       </div>
     </router-link>
 
     <router-link class="bigRouter" to="/Settings/Machine">
       <div>
         <img src="/img/icons/machine.png" />
-        <h3 style="text-align: center">Machine</h3>
+        <h3 style="text-align: center">{{ $t("routes.machine") }}</h3>
       </div>
     </router-link>
 
     <router-link class="bigRouter" to="/Settings/System">
       <div>
         <img src="/img/icons/folder.png" />
-        <h3 style="text-align: center">System</h3>
+        <h3 style="text-align: center">{{ $t("routes.system") }}</h3>
       </div>
     </router-link>
 
     <router-link class="bigRouter" to="/Settings/About">
       <div>
         <img src="/img/icons/info.png" />
-        <h3 style="text-align: center">About</h3>
+        <h3 style="text-align: center">{{ $t("routes.about") }}</h3>
       </div>
     </router-link>
   </div>
