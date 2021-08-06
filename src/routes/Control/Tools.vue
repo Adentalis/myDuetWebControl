@@ -1,7 +1,7 @@
 <style scoped>
 #grid {
   display: grid;
-  grid-template-columns: repeat(2, 92vh);
+  grid-template-columns: repeat(60%, 30%);
   grid-template-rows: repeat(2, 45vh);
   grid-gap: 4vh;
 }
@@ -13,7 +13,6 @@
 <template>
   <div id="grid">
     <tools-panel></tools-panel>
-    <temperature-chart></temperature-chart>
     <extrude-panel></extrude-panel>
     <div>
       <v-col>
