@@ -58,12 +58,8 @@ textarea {
   width: 200px;
 }
 
-#t {
-  position: absolute;
-}
 .nav-item {
-  height: 13.2% !important;
-  width: 90px !important;
+  width: 50% !important;
   margin: 0px auto !important;
   padding: 5px 2px;
   cursor: pointer;
@@ -72,13 +68,17 @@ textarea {
 .v-navigation-drawer {
   position: fixed !important;
 }
+
+.nav-btn {
+  text-align: center;
+  margin-top: 3vh;
+}
 </style>
 
 <template>
   <v-app>
     <!--Start of left navbar-->
     <v-navigation-drawer
-      id="t"
       v-model="drawer"
       permanent
       clipped
@@ -86,33 +86,30 @@ textarea {
       app
       width="150"
     >
-      <!-- <v-list
-        dense
-        nav
-      >
-    <div
-          style='height:16%;'
-          v-for="item in items"
-          :key="item.title"
-          link
-          :to='item.path'
-        >
-         
-          <v-img :src="item.icon" style='max-height:15%;'></v-img>
-      </div>
-      </v-list>     -->
       <div class="nav-item">
-        <v-img src="./assets/ab.png" @click="goTo('/')"></v-img>
-        <v-img src="/img/icons/print.png" @click="goTo('/Job')"></v-img>
-        <v-img src="/img/icons/control.png" @click="goTo('/Control')"></v-img>
-        <v-img src="/img/icons/settings.png" @click="goTo('/Settings')"></v-img>
-        <v-img src="/img/icons/back.png" @click="goBack()"></v-img>
-        <v-img src="/img/icons/stop.png" @click="stop()"></v-img>
-      </div>
+        <div class="nav-btn" @click="goTo('/')">
+          <v-img src="/img/icons/home.png"></v-img>
+          Home
+        </div>
 
-      <!-- <router-link class="navRouter" to="/Job">Print</router-link>
-      <router-link class="navRouter" to="/Control">Control</router-link>
-      <router-link class="navRouter" to="/Settings">Settings</router-link> -->
+        <div class="nav-btn" @click="goTo('/Job')">
+          <v-img src="/img/icons/print.png"></v-img>
+          Print
+        </div>
+
+        <div class="nav-btn" @click="goTo('/Control')">
+          <v-img src="/img/icons/hand.png"></v-img>
+          Control
+        </div>
+
+        <div class="nav-btn" @click="goTo('/Settings')">
+          <v-img src="/img/icons/settings.png"></v-img>
+          Settings
+        </div>
+        <div class="nav-btn" @click="goBack()">
+          <v-img class="a" src="/img/icons/back.png"></v-img>
+        </div>
+      </div>
     </v-navigation-drawer>
     <!--End of left navbar-->
 
