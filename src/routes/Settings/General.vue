@@ -2,7 +2,6 @@
   <div>
     <settings-apperance-panel></settings-apperance-panel>
     <settings-notifications-panel></settings-notifications-panel>
-    <settings-logo-panel></settings-logo-panel>
   </div>
 </template>
 
@@ -11,10 +10,8 @@
 "use strict";
 
 import { registerRoute } from "..";
-import SettingsLogoPanel from "../../components/panels/SettingsLogoPanel.vue";
 
 export default {
-  components: { SettingsLogoPanel },
   install() {
     // Register a route via Files -> Jobs
     registerRoute(this, {
