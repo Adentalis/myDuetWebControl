@@ -12,7 +12,6 @@
 
 <template>
   <div id="grid">
-    {{ showOffsetModel }}
     <tools-panel></tools-panel>
     <temperature-chart></temperature-chart>
     <extrude-panel></extrude-panel>
