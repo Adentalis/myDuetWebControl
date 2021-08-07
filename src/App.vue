@@ -118,7 +118,7 @@ textarea {
     </v-navigation-drawer>
     <!--End of left navbar-->
 
-    <!--Start of top statusbar-->
+    <!--Start of statusbar-->
     <v-app-bar ref="appToolbar" app clipped-left>
       <!--Name of printer-->
       <v-toolbar-title>
@@ -129,17 +129,17 @@ textarea {
       <!--connect Button-->
       <connect-btn v-if="isLocal" class="hidden-xs-only"></connect-btn>
       <v-spacer></v-spacer>
+
       <!-- Status-->
       <status-label id="currentStatus" v-if="status"></status-label>
       <v-spacer></v-spacer>
 
-      <!-- Time-->
+      <!-- current route-->
       <h2>{{ getRoute }}</h2>
       <v-spacer></v-spacer>
 
-      <!--show time-->
+      <!--Time-->
       <h2>{{ getTime }}</h2>
-
       <v-spacer></v-spacer>
 
       <!--Stop Btn-->
@@ -203,8 +203,59 @@ export default {
       },
       getRoute() {
         let path = this.$route.fullPath.split("/");
-        if (path[1] !== "") return path[path.length - 1];
-        else return "Home";
+        let view = "";
+        switch (path[path.length - 1]) {
+          case "":
+            view = this.$t("routes.home");
+            break;
+          case "Job":
+            view = this.$t("routes.print");
+            break;
+          case "Control":
+            view = this.$t("routes.control");
+            break;
+          case "Settings":
+            view = this.$t("routes.settings");
+            break;
+          case "Tools":
+            view = this.$t("routes.tools");
+            break;
+          case "Effector":
+            view = this.$t("routes.effector");
+            break;
+          case "Fans":
+            view = this.$t("routes.fans");
+            break;
+          case "Heightmap":
+            view = this.$t("routes.heightmap");
+            break;
+          case "Macros":
+            view = this.$t("routes.macros");
+            break;
+          case "Console":
+            view = this.$t("routes.console");
+            break;
+          case "General":
+            view = this.$t("routes.generalSettings");
+            break;
+          case "Machine":
+            view = this.$t("routes.machine");
+            break;
+          case "System":
+            view = this.$t("routes.system");
+            break;
+          case "About":
+            view = this.$t("routes.about");
+            break;
+          default:
+            view = this.$t("routes.home");
+            break;
+        }
+
+        return view;
+
+        // if (path[1] !== "") return path[path.length - 1];
+        //else return "Home";
       },
     }),
     ...mapGetters("machine", ["hasTemperaturesToDisplay"]),
@@ -265,22 +316,7 @@ export default {
 
     stop() {},
     async startPlugin(plugin) {
-      // this.busyPlugins.push(plugin.name);
-      // try {
-      // try {
-      // Load DWC resources
       await this.loadDwcPlugin({ name: plugin.name, saveSettings: true });
-
-      // Display a message
-      // alert("Plugin has been started");
-      // } catch (e) {
-      // alert(e);
-      // throw e;
-      // }
-      // } finally {
-      // this.busyPlugins = this.busyPlugins.filter(
-      // (item) => item != plugin.name
-      // );
     },
     getPages(category) {
       return category.pages.filter((page) => page.condition);
