@@ -117,6 +117,14 @@ export default {
       z: "",
     };
   },
+  watch: {
+    showOffsetModel() {
+      this.tool = "";
+      this.x = "";
+      this.y = "";
+      this.z = "";
+    },
+  },
 
   install() {
     // Register a route via Files -> Jobs
