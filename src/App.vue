@@ -138,8 +138,8 @@ textarea {
       <v-spacer></v-spacer>
 
       <!--show time-->
+      <h2>{{ getTime }}</h2>
 
-      <h2>{{ this.model.state.time }}</h2>
       <v-spacer></v-spacer>
 
       <!--Stop Btn-->
@@ -193,12 +193,14 @@ export default {
       webcam: (state) => state.settings.webcam,
 
       injectedComponents: (state) => state.uiInjection.injectedComponents,
-      //getTime() {
-      //let time = this.model.state.time;
-      //time = time.substring(0, time.length - 3);
-      //time = time.substring(time.length - 5);
-      // return time;
-      // },
+      getTime() {
+        let time = this.model.state.time;
+        if (time !== null) {
+          time = time.substring(0, time.length - 3);
+          time = time.substring(time.length - 5);
+          return time;
+        }
+      },
       getRoute() {
         let path = this.$route.fullPath.split("/");
         if (path[1] !== "") return path[path.length - 1];
@@ -303,7 +305,6 @@ export default {
   },
   mounted() {
     this.rname = this.$route.fullPath;
-    console.log(this.$route.fullPath);
     Plugins.forEach((element) => {
       this.startPlugin(element);
     });
