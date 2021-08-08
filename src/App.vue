@@ -63,6 +63,7 @@ textarea {
   margin: 0px auto !important;
   padding: 5px 2px;
   cursor: pointer;
+  font-size: 22px;
 }
 
 .v-navigation-drawer {
@@ -78,6 +79,12 @@ textarea {
   margin-left: 5vh;
   font-size: 24px;
 }
+
+#currentStatus {
+  width: 8vh;
+  text-align: center;
+  transform: scale(1.6);
+}
 </style>
 
 <template>
@@ -89,7 +96,7 @@ textarea {
       clipped
       fixed
       app
-      width="150"
+      width="180"
     >
       <div class="nav-item">
         <div class="nav-btn" @click="goTo('/')">
@@ -119,7 +126,7 @@ textarea {
     <!--End of left navbar-->
 
     <!--Start of statusbar-->
-    <v-app-bar ref="appToolbar" app clipped-left>
+    <v-app-bar id="statusbar" ref="appToolbar" app clipped-left>
       <!--Name of printer-->
       <v-toolbar-title>
         <div id="title">{{ name }}</div>
