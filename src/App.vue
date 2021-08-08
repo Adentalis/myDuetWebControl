@@ -233,7 +233,7 @@ export default {
           case "Fans":
             view = this.$t("routes.fans");
             break;
-          case "Heightmap":
+          case "HeightMap":
             view = this.$t("routes.heightmap");
             break;
           case "Macros":
