@@ -8,6 +8,17 @@
 .v-tooltip__content {
   z-index: 5000000 !important;
 }
+
+#setOffsetBtn {
+  margin-right: 70px;
+}
+
+#tooltip {
+  transform: scale(1.6);
+  position: absolute;
+  top: 22px;
+  right: 25px;
+}
 </style>
 
 <template>
@@ -25,7 +36,7 @@
                     <v-tooltip bottom>
                       <template v-slot:activator="{ on, attrs }">
                         <v-icon
-                          style="position: absolute; top: 10px; right: 20px"
+                          id="tooltip"
                           color="primary"
                           dark
                           v-bind="attrs"
@@ -33,7 +44,7 @@
                           >mdi-information-outline</v-icon
                         >
                       </template>
-                      <span>Co</span>
+                      <span>{{ $t("dialog.setOffset.tooltip") }}</span>
                     </v-tooltip>
                   </div>
                 </v-col>
@@ -81,17 +92,19 @@
                 <v-spacer></v-spacer>
 
                 <code-btn
+                  id="setOffsetBtn"
                   :code="`G10 P${tool} X${x} Y${y} Z${z} \nM500 P10`"
                   :log="true"
                   @click="showOffsetModel = false"
-                  >Set offset</code-btn
                 >
+                  {{ $t("dialog.setOffset.save") }}
+                </code-btn>
                 <v-btn
                   color="red darken-1"
                   text
                   @click="showOffsetModel = false"
                 >
-                  Cancel
+                  {{ $t("dialog.setOffset.close") }}
                 </v-btn>
               </v-card-actions>
             </v-card>

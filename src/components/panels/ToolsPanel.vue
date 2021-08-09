@@ -27,7 +27,7 @@ table.extra tr > td:first-child {
   display: block;
   margin: 0px 10px;
   cursor: pointer;
-  color: blue;
+  color: rgb(25, 118, 210);
 }
 .item:hover {
   text-decoration: underline;

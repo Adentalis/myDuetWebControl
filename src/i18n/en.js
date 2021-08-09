@@ -249,6 +249,11 @@ export default {
       title: "Run {0}",
       prompt: "Do you want to run {0}?",
     },
+    setOffset: {
+      close: "close",
+      save: "set offset",
+      tooltip: "values are saved in config-override system file!",
+    },
     startJob: {
       title: "Start {0}",
       prompt: "Do you want to start {0}?",

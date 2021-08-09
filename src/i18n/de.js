@@ -255,6 +255,11 @@ export default {
       title: "{0} starten",
       prompt: "Möchten Sie {0} starten?",
     },
+    setOffset: {
+      close: "Schließen",
+      save: "offset setzen",
+      tooltip: "Werte werden in der config-override.g Systemdatei gespeichert!",
+    },
     startJob: {
       title: "{0} starten",
       prompt: "Möchten Sie {0} starten?",
