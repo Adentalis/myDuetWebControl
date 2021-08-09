@@ -81,7 +81,7 @@ textarea {
 }
 
 #currentStatus {
-  width: 8vh;
+  width: 12vh;
   text-align: center;
   transform: scale(1.6);
 }
