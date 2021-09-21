@@ -2,7 +2,6 @@
   <v-row>
     <v-col>
       <job-file-list></job-file-list>
-      <router-link class="bigRouter" to="/Job/Status">Status</router-link>
     </v-col>
   </v-row>
 </template>
