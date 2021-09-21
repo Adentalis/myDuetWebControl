@@ -2,7 +2,7 @@
 #settingsgrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: minmax(30vh, 30vh);
+  grid-template-rows: repeat(2, 1fr);
   grid-gap: 10vh 5vh;
   margin: 5vh;
 }
