@@ -13,12 +13,12 @@
     <settings-apperance-panel></settings-apperance-panel>
     <settings-notifications-panel></settings-notifications-panel>
     <v-card outlined>
-      <v-card-title>Color Preferences</v-card-title>
+      <v-card-title> {{ $t("colourpicker.title") }} </v-card-title>
       <v-row>
         <v-col md="6">
-          <h4 class="marginLeft">Control</h4>
+          <h4 class="marginLeft">{{ $t("colourpicker.controlPage") }}</h4>
           <div>
-            <p class="marginLeft">Background</p>
+            <p class="marginLeft">{{ $t("colourpicker.background") }}</p>
             <v-color-picker
               v-model="newControl.background"
               hide-canvas
@@ -26,7 +26,7 @@
           </div>
 
           <div>
-            <p class="marginLeft">Border</p>
+            <p class="marginLeft">{{ $t("colourpicker.border") }}</p>
             <v-color-picker
               v-model="newControl.border"
               hide-canvas
@@ -34,9 +34,9 @@
           </div>
         </v-col>
         <v-col md="6">
-          <h4>Settings</h4>
+          <h4>{{ $t("colourpicker.settingsPage") }}</h4>
           <div>
-            <p>Background</p>
+            <p>{{ $t("colourpicker.background") }}</p>
             <v-color-picker
               v-model="newSettings.background"
               hide-canvas
@@ -44,7 +44,7 @@
           </div>
 
           <div>
-            <p>Border</p>
+            <p>{{ $t("colourpicker.border") }}</p>
             <v-color-picker
               v-model="newSettings.border"
               hide-canvas
@@ -58,7 +58,7 @@
             depressed
             color="primary"
           >
-            Save changes
+            {{ $t("colourpicker.saveBtn") }}
           </v-btn>
         </v-col>
       </v-row>

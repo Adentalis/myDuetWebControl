@@ -148,6 +148,14 @@ export default {
       noData: "No Data",
     },
   },
+  colourpicker: {
+    title: "Colour Preferences",
+    controlPage: "Control Page",
+    settingsPage: "Settings Page",
+    background: "Background",
+    border: "Border",
+    saveBtn: "Save Changes",
+  },
   dialog: {
     changeMoveStep: {
       title: "Change move step",

@@ -151,6 +151,14 @@ export default {
       sensor: "Sensor {0}",
     },
   },
+  colourpicker: {
+    title: "Verwendete Farben",
+    controlPage: "Steuerung Seite",
+    settingsPage: "Einstellungen Seite",
+    background: "Hintergrund",
+    border: "Rand",
+    saveBtn: "Änderungen speichern",
+  },
   dialog: {
     changeMoveStep: {
       title: "Bewegungsschritt ändern",
