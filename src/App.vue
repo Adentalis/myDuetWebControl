@@ -95,6 +95,7 @@ textarea {
       permanent
       clipped
       fixed
+      stateless
       app
       width="180"
     >
