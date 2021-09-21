@@ -2,6 +2,10 @@
 .marginLeft {
   margin-left: 2vh;
 }
+.marginBottomLeft {
+  margin-left: 2vh;
+  margin-bottom: 2vh;
+}
 </style>
 
 <template>
@@ -48,7 +52,12 @@
           </div>
         </v-col>
         <v-col>
-          <v-btn @click="saveChanges" depressed color="primary">
+          <v-btn
+            class="marginBottomLeft"
+            @click="saveChanges"
+            depressed
+            color="primary"
+          >
             Save changes
           </v-btn>
         </v-col>
