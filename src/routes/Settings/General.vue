@@ -34,9 +34,9 @@
           </div>
         </v-col>
         <v-col md="6">
-          <h4>{{ $t("colourpicker.settingsPage") }}</h4>
+          <h4 class="marginLeft">{{ $t("colourpicker.settingsPage") }}</h4>
           <div>
-            <p>{{ $t("colourpicker.background") }}</p>
+            <p class="marginLeft">{{ $t("colourpicker.background") }}</p>
             <v-color-picker
               v-model="newSettings.background"
               hide-canvas
@@ -44,7 +44,7 @@
           </div>
 
           <div>
-            <p>{{ $t("colourpicker.border") }}</p>
+            <p class="marginLeft">{{ $t("colourpicker.border") }}</p>
             <v-color-picker
               v-model="newSettings.border"
               hide-canvas
