@@ -260,9 +260,6 @@ export default {
         }
 
         return view;
-
-        // if (path[1] !== "") return path[path.length - 1];
-        //else return "Home";
       },
     }),
     ...mapGetters("machine", ["hasTemperaturesToDisplay"]),
