@@ -14,8 +14,7 @@
   text-transform: uppercase;
   display: inline-block;
   text-align: center;
-  background: rgb(167, 88, 219);
-  border: 5px rgb(76, 23, 119) solid;
+  border: 5px solid;
   font-size: 4vh;
   border-radius: 3vh;
 }
@@ -42,28 +41,56 @@
 
 <template>
   <div id="settingsgrid">
-    <router-link class="bigRouter" to="/Settings/General">
+    <router-link
+      class="bigRouter"
+      :style="{
+        backgroundColor: setting.background,
+        borderColor: setting.border,
+      }"
+      to="/Settings/General"
+    >
       <div>
         <img src="/img/icons/preferences.png" />
         <h3 style="text-align: center">{{ $t("routes.generalSettings") }}</h3>
       </div>
     </router-link>
 
-    <router-link class="bigRouter" to="/Settings/Machine">
+    <router-link
+      class="bigRouter"
+      :style="{
+        backgroundColor: setting.background,
+        borderColor: setting.border,
+      }"
+      to="/Settings/Machine"
+    >
       <div>
         <img src="/img/icons/machine.png" />
         <h3 style="text-align: center">{{ $t("routes.machine") }}</h3>
       </div>
     </router-link>
 
-    <router-link class="bigRouter" to="/Settings/System">
+    <router-link
+      class="bigRouter"
+      :style="{
+        backgroundColor: setting.background,
+        borderColor: setting.border,
+      }"
+      to="/Settings/System"
+    >
       <div>
         <img src="/img/icons/folder.png" />
         <h3 style="text-align: center">{{ $t("routes.system") }}</h3>
       </div>
     </router-link>
 
-    <router-link class="bigRouter" to="/Settings/About">
+    <router-link
+      class="bigRouter"
+      :style="{
+        backgroundColor: setting.background,
+        borderColor: setting.border,
+      }"
+      to="/Settings/About"
+    >
       <div>
         <img src="/img/icons/info.png" />
         <h3 style="text-align: center">{{ $t("routes.about") }}</h3>
@@ -82,6 +109,7 @@ import { MachineMode } from "../../store/machine/modelEnums.js";
 
 export default {
   computed: {
+    ...mapState(["setting", "control"]),
     ...mapState("machine/model", {
       atxPower: (state) => state.state.atxPower,
       machineMode: (state) => state.state.machineMode,

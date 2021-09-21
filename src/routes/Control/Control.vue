@@ -43,42 +43,84 @@
 
 <template>
   <div id="homegrid">
-    <router-link class="bigRouter" to="/Control/Tools">
+    <router-link
+      class="bigRouter"
+      :style="{
+        backgroundColor: control.background,
+        borderColor: control.border,
+      }"
+      to="/Control/Tools"
+    >
       <div>
         <img src="/img/icons/tool.png" />
         <h3 style="text-align: center">{{ $t("routes.tools") }}</h3>
       </div>
     </router-link>
 
-    <router-link class="bigRouter" to="/Control/Effector">
+    <router-link
+      class="bigRouter"
+      :style="{
+        backgroundColor: control.background,
+        borderColor: control.border,
+      }"
+      to="/Control/Effector"
+    >
       <div>
         <img src="/img/icons/movement.png" />
         <h3 style="text-align: center">{{ $t("routes.effector") }}</h3>
       </div>
     </router-link>
 
-    <router-link class="bigRouter" to="/Control/Fans">
+    <router-link
+      class="bigRouter"
+      :style="{
+        backgroundColor: control.background,
+        borderColor: control.border,
+      }"
+      to="/Control/Fans"
+    >
       <div>
         <img src="/img/icons/fan.png" />
         <h3 style="text-align: center">{{ $t("routes.fans") }}</h3>
       </div>
     </router-link>
 
-    <router-link class="bigRouter" to="/HeightMap">
+    <router-link
+      class="bigRouter"
+      :style="{
+        backgroundColor: control.background,
+        borderColor: control.border,
+      }"
+      to="/HeightMap"
+    >
       <div>
         <img src="/img/icons/map.png" />
         <h3 style="text-align: center">{{ $t("routes.heightmap") }}</h3>
       </div>
     </router-link>
 
-    <router-link class="bigRouter" to="/Control/Macros">
+    <router-link
+      class="bigRouter"
+      :style="{
+        backgroundColor: control.background,
+        borderColor: control.border,
+      }"
+      to="/Control/Macros"
+    >
       <div>
         <img src="/img/icons/macro.png" />
         <h3 style="text-align: center">{{ $t("routes.macros") }}</h3>
       </div>
     </router-link>
 
-    <router-link class="bigRouter" to="/Control/Console">
+    <router-link
+      class="bigRouter"
+      :style="{
+        backgroundColor: control.background,
+        borderColor: control.border,
+      }"
+      to="/Control/Console"
+    >
       <div>
         <img src="/img/icons/console.png" />
         <h3 style="text-align: center">{{ $t("routes.console") }}</h3>
@@ -97,6 +139,7 @@ import { MachineMode } from "../../store/machine/modelEnums.js";
 
 export default {
   computed: {
+    ...mapState(["setting", "control"]),
     ...mapState("machine/model", {
       atxPower: (state) => state.state.atxPower,
       machineMode: (state) => state.state.machineMode,

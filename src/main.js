@@ -22,6 +22,9 @@ export default new Vue({
   render: (h) => h(App),
   router,
   store,
+  beforeCreate() {
+    this.$store.commit("initialiseStore");
+  },
   vuetify: new Vuetify({
     icons: {
       iconfont: "mdiSvg",
