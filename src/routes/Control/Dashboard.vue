@@ -12,23 +12,16 @@
 <template>
   <div
     v-if="
-      this.state.status === 'starting' ||
-      this.state.status === 'updating' ||
-      this.state.status === 'off' ||
-      this.state.status === 'busy' ||
-      this.state.status === 'changingTool' ||
-      this.state.status === 'idle'
+      this.state.status === 'halted' ||
+      this.state.status === 'pausing' ||
+      this.state.status === 'paused' ||
+      this.state.status === 'resuming' ||
+      this.state.status === 'processing' ||
+      this.state.status === 'simulating'
     "
   >
     <div id="grid">
-      <v-row>
-        <temperature-chart></temperature-chart>
-      </v-row>
-    </div>
-  </div>
-  <!---no clue how to route to another page this way. Just copied /Job/Status template here-->
-  <div v-else>
-    <div class="d-flex flex-column">
+      <div class="d-flex flex-column">
       <job-progress class="mb-3"></job-progress>
       <v-row>
         <v-col order="1" order-md="1" cols="12" sm="6" md="3" xl="2">
@@ -105,6 +98,13 @@
         </v-col>
       </v-row>
     </div>
+    </div>
+  </div>
+  <!---no clue how to route to another page this way. Just copied /Job/Status template here-->
+  <div v-else>
+<v-row>
+<temperature-chart></temperature-chart>
+</v-row>
   </div>
 </template>
 
